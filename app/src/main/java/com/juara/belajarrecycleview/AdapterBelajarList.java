@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class AdapterListSimple extends RecyclerView.Adapter<AdapterListSimple.ViewHolder> {
+public class AdapterBelajarList extends RecyclerView.Adapter<AdapterBelajarList.ViewHolder> {
 
-    List<ModelBiodata> data;
+    List<ModelBelajar> data;
     Context context;
 
 
-    public AdapterListSimple(Context context, List<ModelBiodata> data){
+    public AdapterBelajarList(Context context, List<ModelBelajar> data){
 
 
         this.data = data;
@@ -29,18 +29,20 @@ public class AdapterListSimple extends RecyclerView.Adapter<AdapterListSimple.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_belajar, parent, false);
         ViewHolder myViewHolder = new ViewHolder(view);
         return myViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        TextView txtNama = holder.txtNama;
-        TextView txtAlamat = holder.txtAlamat;
+        TextView txtKelas = holder.txtKelas;
+        TextView txtTanggal = holder.txtTanggal;
+        TextView txtJam = holder.txtJam;
 
-        txtNama.setText(data.get(position).getNama());
-        txtAlamat.setText(data.get(position).getAlamat());
+        txtKelas.setText(data.get(position).getNamaKelas());
+        txtTanggal.setText(data.get(position).getTglKelas());
+        txtJam.setText(data.get(position).getJamKelas());
 
     }
 
@@ -52,18 +54,19 @@ public class AdapterListSimple extends RecyclerView.Adapter<AdapterListSimple.Vi
 
     // Static inner class to initialize the views of rows
     static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView txtNama,txtAlamat;
+        public TextView txtKelas,txtJam,txtTanggal;
 
         public ViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-            txtNama = (TextView) itemView.findViewById(R.id.txtName);
-            txtAlamat = (TextView) itemView.findViewById(R.id.txtTanggal);
+            txtKelas = (TextView) itemView.findViewById(R.id.txtKelas);
+            txtTanggal = (TextView) itemView.findViewById(R.id.txtTanggal);
+            txtJam = (TextView) itemView.findViewById(R.id.txtJam);
 
         }
         @Override
         public void onClick(View view) {
-            Log.d("onclick", "onClick " + getLayoutPosition() + " " + txtNama.getText());
+           // Log.d("onclick", "onClick " + getLayoutPosition() + " " + txt.getText());
         }
     }
 

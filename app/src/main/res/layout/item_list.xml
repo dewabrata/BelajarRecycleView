@@ -18,7 +18,7 @@
             android:text="Dewa" />
 
         <TextView
-            android:id="@+id/txtAlamat"
+            android:id="@+id/txtTanggal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="TextView" />
@@ -26,8 +26,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/chelsea" />
 
 </LinearLayout>
