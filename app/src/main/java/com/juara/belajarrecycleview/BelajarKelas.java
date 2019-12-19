@@ -33,6 +33,16 @@ List<ModelBelajar> lstModel;
         mb.setTglKelas("13-12-2020");
         mb.setJamKelas("19:00");
         lstModel.add(mb);
+        mb = new ModelBelajar();
+        mb.setNamaKelas("Kelas 2");
+        mb.setTglKelas("13-12-2020");
+        mb.setJamKelas("19:00");
+        lstModel.add(mb);
+        mb = new ModelBelajar();
+        mb.setNamaKelas("Kelas 2");
+        mb.setTglKelas("13-12-2020");
+        mb.setJamKelas("19:00");
+        lstModel.add(mb);
 
 
         AdapterBelajarList adapter = new AdapterBelajarList(BelajarKelas.this,lstModel);

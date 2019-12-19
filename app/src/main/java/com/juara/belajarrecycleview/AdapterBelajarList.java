@@ -14,6 +14,7 @@ import java.util.List;
 
 public class AdapterBelajarList extends RecyclerView.Adapter<AdapterBelajarList.ViewHolder> {
 
+
     List<ModelBelajar> data;
     Context context;
 
@@ -26,12 +27,32 @@ public class AdapterBelajarList extends RecyclerView.Adapter<AdapterBelajarList.
 
     }
 
+    public static int TYPE_1 = 1;
+    public static int TYPE_2 = 2;
+
+    @Override
+    public int getItemViewType(int position) {
+        if(position % 2 == 0){
+            return AdapterBelajarList.TYPE_1;
+        }else{
+            return AdapterBelajarList.TYPE_2;
+        }
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        if(viewType == TYPE_1){
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_belajar, parent, false);
         ViewHolder myViewHolder = new ViewHolder(view);
         return myViewHolder;
+        }
+        else{
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_belajar_dua, parent, false);
+            ViewHolder myViewHolder = new ViewHolder(view);
+            return myViewHolder;
+        }
     }
 
     @Override
